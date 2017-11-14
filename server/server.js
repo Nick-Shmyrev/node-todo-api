@@ -29,13 +29,28 @@ app.post('/users', (req, res) => {
   }).then((token) => {
     res.header('x-auth', token).send(user);
   }).catch((error) => {
-    res.status(400).send(error);
+    res.status(400).send();
   });
 });
 
 
 app.get('/users/me', authenticate, (req, res) => {
   res.send(req.user);
+});
+
+app.post('/users/login', (req, res) => {
+  var userReq = new User({
+    email: req.body.email,
+    password: req.body.password
+  });
+
+  User.findByCredentials(userReq.email, userReq.password).then((user) => {
+    return user.generateAuthToken().then((token) => {
+      res.header('x-auth', token).send(user);
+    });
+  }).catch((error) => {
+    res.status(400).send();
+  });
 });
 
 
