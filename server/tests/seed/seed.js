@@ -1,3 +1,5 @@
+/*jshint esversion: 6 */
+
 var {ObjectID} = require('mongodb');
 var jwt = require('jsonwebtoken');
 const {Todo} = require('./../../models/todo.js');

@@ -1,3 +1,5 @@
+/*jshint esversion: 6 */
+
 require('./config/config.js');
 
 var _ = require('lodash');

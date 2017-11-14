@@ -1,3 +1,5 @@
+/*jshint esversion: 6 */
+
 var mongoose = require('mongoose');
 var validator = require('validator');
 var jwt = require('jsonwebtoken');
@@ -52,7 +54,7 @@ UserSchema.methods.generateAuthToken = function () {
   return user.save().then(() => {
     return token;
   });
-}
+};
 
 UserSchema.pre('save', function (next) {
   var user = this;
@@ -84,7 +86,7 @@ UserSchema.statics.findByToken = function (token) {
     'tokens.token': token,
     'tokens.access': 'auth'
   });
-}
+};
 
 var User = mongoose.model('User', UserSchema);
 
