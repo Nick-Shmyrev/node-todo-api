@@ -25,7 +25,7 @@ const users = [
     email: 'something@something.else',
     password: 'user2psw',
   }
-]
+];
 
 const todos = [
   {
