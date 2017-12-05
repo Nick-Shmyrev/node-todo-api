@@ -1,5 +1,5 @@
 # Node.js To-Do REST API
-A to-do REST API. Deployed to Heroku, uses Express, MongoDB, JWTs, Crypto-js
+A to-do REST API, part of ["The Complete Node.js Developer Course (2nd Edition)"](https://www.udemy.com/the-complete-nodejs-developer-course-2/learn/v4/overview) course. Deployed to Heroku, uses Express, MongoDB, JWTs, Crypto-js
 
 ## API description:
 **POST /users => {"email": "n.o.n.e1@some.ca", "password": 123456} -** creates a new user, assigns JWT for authentication
